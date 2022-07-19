@@ -1,21 +1,20 @@
-import { SplitScreen } from './SplitScreen'
+import { SplitScreen } from "./SplitScreen";
 
 // Adding background color to your text
-const LeftHandComponent = () => {
-  return <h1 style={{ backgroundColor: 'green'}}>Left!</h1>
-}
+const LeftHandComponent = ({ message }) => {
+  return <h1 style={{ backgroundColor: "green" }}>{message}</h1>;
+};
 
-const RightHandComponent = () => {
-  return <h1 style={{ backgroundColor: 'red'}}>Right!</h1>
-}
+const RightHandComponent = ({ message }) => {
+  return <h1 style={{ backgroundColor: "red" }}>{message}</h1>;
+};
 
 function App() {
   return (
-    <SplitScreen
-      left={LeftHandComponent}
-      right={RightHandComponent} 
-      leftWeight={1}
-      rightWeight={3}/>    
+    <SplitScreen leftWeight={1} rightWeight={3}>
+      <LeftHandComponent message="David" />
+      <RightHandComponent message="Taing" />
+    </SplitScreen>
   );
 }
 
